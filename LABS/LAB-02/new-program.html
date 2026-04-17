@@ -1,0 +1,32 @@
+<!-- Author: Joseph ABAIA -->
+<!--Date: 14 April 2026-->
+<!--Unit: IS312 Web Application Development-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Program</title>
+    <script>
+        function validateForm() {
+            let code = document.forms["progForm"]["ProgramCode"].value;
+            let name = document.forms["progForm"]["ProgramName"].value;
+
+            if (code == "" || name == "") {
+                alert("All fields must be filled!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+<h2>Add New Program</h2>
+
+<form name="progForm" action="add-new-program.php" method="POST" onsubmit="return validateForm()">
+    Program Code: <input type="text" name="ProgramCode"><br><br>
+    Program Name: <input type="text" name="ProgramName"><br><br>
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
